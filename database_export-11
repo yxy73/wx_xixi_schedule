@@ -1,0 +1,7 @@
+{"_id":"0938061f-36c9-4fee-a8c9-726e1a520de2","calendar_time":"","calendar_date":{"$date":"2019-11-16T00:00:00.000Z"},"calendar_des":"个巡音乐会","city":"海口"}
+{"_id":"3c125b7e-4019-492c-a1db-23a39113ec50","calendar_date":{"$date":"2019-11-09T01:18:25.000Z"},"calendar_des":"商业活动","city":"杭州","calendar_time":""}
+{"_id":"3d42fa71-0bfc-4663-935f-6ea227474f85","city":"珠海","calendar_time":"","calendar_date":{"$date":"2019-11-29T00:00:00.000Z"},"calendar_des":"个巡音乐会"}
+{"_id":"4a741dc95dbfadc9013beadd321c101a","city":"上海","calendar_time":"","calendar_date":{"$date":"2019-11-03T09:59:00.000Z"},"calendar_des":"个巡音乐会"}
+{"_id":"4ba1cbc0-ff37-4762-8308-f959fffb7a36","city":"珠海","calendar_time":"","calendar_date":{"$date":"2019-11-04T16:00:00.000Z"},"calendar_des":"test"}
+{"_id":"ca40fca95dbfae3c01402567143142fa","city":"西安","calendar_time":"","calendar_date":{"$date":"2019-11-08T09:59:00.000Z"},"calendar_des":"保利ART音乐节"}
+{"_id":"f46e2a95-6aff-4b38-ac69-80af122d41ab","city":"北京","calendar_time":"","calendar_date":{"$date":"2019-11-13T00:00:00.000Z"},"calendar_des":"节目录制"}
