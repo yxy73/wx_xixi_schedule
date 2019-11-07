@@ -17,14 +17,23 @@
     <view class='date-box'>
         <view wx:for='{{dateArr}}' class='{{item.hasSchedule == true ? "haveSchedule" : ""}} {{isToday == item.isToday ? "nowDay" : ""}}' data-date='{{item.isToday}}'>            
             <view class='date-head'>
-                <view>{{item.dateNum}}</view>
+                <view >{{item.dateNum}}</view>
             </view>
             <!-- <view class='date-weight'>{{item.weight}}</view> -->
         </view>
     </view>
     <view class='date-text'>
      <view wx:for='{{scheduleArr}}'>
-      <view>{{index}} : {{item.calendar_des}} : {{item.calendar_time}} : {{item.city}}</view>
+      <view class='schedule'>
+        <view>
+          <span>{{item.calendar_date}} {{item.calendar_time}}</span>
+          <span>{{item.calendar_add}}</span>
+        </view>
+        <view>
+          <span>{{item.calendar_des}}</span>
+          <span>{{item.city}}</span>
+        </view>
+      </view>
      </view>
     </view>
 </view>

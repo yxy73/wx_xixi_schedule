@@ -76,11 +76,15 @@ Page({
     
     arrLen = startWeek + dayNums;
     // console.log(sqlData);
-    for (let i = 0; i < sqlData.length; i++){
-      scheduleDate = sqlData[i].calendar_date.getDate();
-      scheduleArr[scheduleDate] = { 'city': sqlData[i].city, "calendar_time": sqlData[i].calendar_time, "calendar_des": sqlData[i].calendar_des};
+    if (sqlData != []){
+      for (let i = 0; i < sqlData.length; i++){
+        scheduleDate = sqlData[i].calendar_date.getDate();
+        let date_tmp = scheduleDate > 9 ? scheduleDate.toString() : ('0' + scheduleDate)
+        let month_tmp = (month + 1) > 9 ? (month + 1).toString() : ('0' + (month + 1));
+        scheduleArr[scheduleDate] = { "city": sqlData[i].city, "calendar_add": sqlData[i].calendar_add, "calendar_time": sqlData[i].calendar_time, "calendar_des": sqlData[i].calendar_des, "calendar_date": month_tmp + "-" + date_tmp};
+      }
     }
-    // console.log(scheduleArr);
+    console.log(scheduleArr);
     for (let i = 0; i < arrLen; i++) {
       if (i >= startWeek) {
         num = i - startWeek + 1;
@@ -141,7 +145,8 @@ Page({
       year: year,
       month: (month + 1)
     })
-    this.dateInit(year, month);
+    this.onQuery(year, month);
+    // this.dateInit(year, month);
   },
   nextMonth: function () {
     //全部时间的月份都是按0~11基准，显示月份才+1
@@ -151,7 +156,8 @@ Page({
       year: year,
       month: (month + 1)
     })
-    this.dateInit(year, month);
+    this.onQuery(year, month);
+    // this.dateInit(year, month);
   },
 
   /**

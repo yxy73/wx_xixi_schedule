@@ -52,7 +52,6 @@
 .date-box{
     font-size: 0;
     padding: 10rpx 0;
-    border-bottom:  1px solid #D0D0D0
 }
 .date-box>view{
     position: relative;
@@ -82,7 +81,7 @@
     border-radius: 50%;
     text-align: center;
     color: #fff;
-    background-color: #FF7F50;
+    background-color: #22A7F6;
     margin: 0 auto;
 }
 .date-weight{
@@ -117,7 +116,21 @@
     /* width: 14.285%; */
     color: #020202;
     font-size: 28rpx;
-    text-align: left;
     vertical-align: middle;
-    margin: 15rpx 0;
+}
+
+.schedule{
+  width: 90%;
+  height: 120rpx;
+  padding: 0 10rpx;
+  margin-left: 4%;
+  margin-right: 4%;
+  margin-top: 10rpx;
+  margin-bottom: 15rpx; 
+  border-radius: 22rpx;
+  border-color: #E1E1E1;
+  border-width: 1rpx;
+  border-style: solid;
+  background-size: cover;
+  background-color: #FFFFFF;
 }
