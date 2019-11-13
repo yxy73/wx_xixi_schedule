@@ -15,7 +15,7 @@
         <view wx:for='{{date}}' class='{{(index == todayIndex) && isTodayWeek ? "weekMark" : ""}}'>{{item}}<view></view></view>
     </view>
     <view class='date-box'>
-        <view wx:for='{{dateArr}}' class='{{item.hasSchedule == true ? "haveSchedule" : ""}} {{isToday == item.isToday ? "nowDay" : ""}}' data-date='{{item.isToday}}'>            
+        <view wx:for='{{dateArr}}' class='{{item.hasSchedule == true ? "haveSchedule" : ""}} {{isToday == item.isToday ? "nowDay" : ""}}' data-datenum='{{item.dateNum}}' bindtap='scheduleHighline' >            
             <view class='date-head'>
                 <view >{{item.dateNum}}</view>
             </view>
@@ -23,17 +23,20 @@
         </view>
     </view>
     <view class='date-text'>
-     <view wx:for='{{scheduleArr}}'>
-      <view class='schedule'>
-        <view>
+    <scroll-view scroll-into-view="card{{current_tag}}" scroll-y="true" bindscroll="scroll" scroll-with-animation="true" style='height:{{scrollHeight}}rpx'>
+     <view wx:for='{{scheduleArr}}' id='card{{index}}'>
+      <view class="{{index == current_tag?'scheduleHighline':'schedule'}} cards" >
+        <view class="skill-level">
           <span>{{item.calendar_date}} {{item.calendar_time}}</span>
+          <h2>{{item.city}}</h2>
+			  </view>
+        <view class="skill-meta">
+          <h3>{{item.calendar_des}}</h3>
           <span>{{item.calendar_add}}</span>
-        </view>
-        <view>
-          <span>{{item.calendar_des}}</span>
-          <span>{{item.city}}</span>
-        </view>
+			  </view>
       </view>
-     </view>
+     </view>   
+    </scroll-view>
     </view>
+    <view class="bottom-txt">非官方 有问题微博联系@小鱼晰晰</view>
 </view>

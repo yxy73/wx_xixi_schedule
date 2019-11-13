@@ -15,6 +15,8 @@ Page({
     isToday: 0,
     isTodayWeek: false,
     todayIndex: 0,
+    current_tag: 0,
+    scrollHeight: 0,
   },
 
   /**
@@ -25,6 +27,13 @@ Page({
     let now = new Date();
     let year = now.getFullYear();
     let month = now.getMonth() + 1;
+    wx.getSystemInfo({
+      success: (res) => {
+        this.setData({
+          scrollHeight: res.windowHeight * 0.85
+        });
+      }
+    })
     this.onQuery(year, now.getMonth());
     this.setData({
       year: year,
@@ -84,7 +93,7 @@ Page({
         scheduleArr[scheduleDate] = { "city": sqlData[i].city, "calendar_add": sqlData[i].calendar_add, "calendar_time": sqlData[i].calendar_time, "calendar_des": sqlData[i].calendar_des, "calendar_date": month_tmp + "-" + date_tmp};
       }
     }
-    console.log(scheduleArr);
+    // console.log(scheduleArr);
     for (let i = 0; i < arrLen; i++) {
       if (i >= startWeek) {
         num = i - startWeek + 1;
@@ -160,6 +169,12 @@ Page({
     // this.dateInit(year, month);
   },
 
+  scheduleHighline: function (e) {
+    let idx = e.currentTarget.dataset.datenum;
+    this.setData({
+      current_tag: idx,
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
