@@ -6,7 +6,7 @@
     "backgroundColor": "#F5F5F5",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F5F5F5",
-    "navigationBarTitleText": "王晰行程",
+    "navigationBarTitleText": "晰晰行程单",
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json"
